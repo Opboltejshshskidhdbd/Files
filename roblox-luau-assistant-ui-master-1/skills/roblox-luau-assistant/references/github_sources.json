@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "catalog_name": "Curated GitHub Luau/Roblox reference catalog",
+  "runtime_mode": "packaged_static_reference_catalog",
+  "authority": "supplemental reference; never authoritative over Official Roblox documentation",
+  "selection_policy": "Only repository/file content actually verified through the available GitHub connector was included. No repository was imported wholesale.",
+  "sources": [
+    {
+      "repository": "luau-lang/site",
+      "repository_url": "https://github.com/luau-lang/site",
+      "file_path": "README.md",
+      "file_url": "https://github.com/luau-lang/site/blob/master/README.md",
+      "topic": "Luau language documentation",
+      "source_type": "GitHub",
+      "authority": "supplemental language reference",
+      "verified_ref": "32a297009468dac1cac72a6d360820bc5d95d589",
+      "summary": "Official Luau organization repository hosting the Luau website and user-facing language documentation. Use as supplemental language context; Roblox Creator Hub remains authoritative for Roblox-specific API behavior."
+    },
+    {
+      "repository": "roblox-aurora/rbx-net",
+      "repository_url": "https://github.com/roblox-aurora/rbx-net",
+      "file_path": "README.md",
+      "file_url": "https://github.com/roblox-aurora/rbx-net/blob/main/README.md",
+      "topic": "Roblox networking architecture",
+      "source_type": "GitHub",
+      "authority": "reference pattern",
+      "verified_ref": "a998c23ddde21500c20baceb243406ac4c21987a",
+      "summary": "Definition-based networking framework with namespacing, middleware concepts such as type checking/rate limiting/logging, and asynchronous networking patterns. The repository is supplemental architecture reference, not Roblox API authority."
+    },
+    {
+      "repository": "ffrostfall/ByteNet",
+      "repository_url": "https://github.com/ffrostfall/ByteNet",
+      "file_path": "README.md",
+      "file_url": "https://github.com/ffrostfall/ByteNet/blob/master/README.md",
+      "topic": "Buffer-based Roblox networking",
+      "source_type": "GitHub",
+      "authority": "reference pattern",
+      "verified_ref": "24491f9dfa45873f508a3932cf2d1c29d6c4d147",
+      "summary": "Luau networking library centered on buffer serialization/deserialization and typed networking APIs. Use only as a practical networking reference; do not infer that its performance/security claims are universal."
+    },
+    {
+      "repository": "1Axen/blink",
+      "repository_url": "https://github.com/1Axen/blink",
+      "file_path": "README.md",
+      "file_url": "https://github.com/1Axen/blink/blob/main/README.md",
+      "topic": "Roblox buffer networking and validation",
+      "source_type": "GitHub",
+      "authority": "reference pattern",
+      "verified_ref": "26757fe9ce6044f0e89e4cbfb39e32d995090ac8",
+      "summary": "IDL/compiler-oriented Luau networking project describing generated buffer networking, client-data validation, and bandwidth/CPU optimization goals. Treat claims as project-specific and supplemental."
+    }
+  ]
+}

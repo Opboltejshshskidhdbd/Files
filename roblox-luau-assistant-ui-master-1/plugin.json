@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "roblox-luau-assistant",
+  "version": "1.15.1-ui-master",
+  "description": "Roblox Dev Master: full-stack Roblox engineering assistant with Level 1 engineering gate, Level 2 bundled Luau parser, Level 3 external validation through the connected Luau Validator Bridge MCP, API truth gates, evidence-gated learning and strict source-truth enforcement.",
+  "author": {
+    "name": "Roblox Dev Master Team"
+  },
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Roblox Dev Master",
+        "shortDescription": "Roblox Luau engineering + validation via MCP",
+        "longDescription": "Level 1 engineering audit, Level 2 bundled Luau parser, and Level 3 external validation through the connected Luau Validator Bridge MCP server, followed by API truth, repair, revalidation and evidence gates.",
+        "developerName": "Roblox Dev Master Team",
+        "category": "Developer Tools",
+        "capabilities": [
+          "Interactive",
+          "Read",
+          "Write"
+        ],
+        "defaultPrompt": [
+          "Run the Roblox Engineering Gate on my code.",
+          "Validate this Luau with the Level 3 MCP tool.",
+          "Review my Roblox script for bugs and exploits."
+        ]
+      }
+    }
+  },
+  "keywords": [
+    "ui",
+    "responsive-ui"
+  ]
+}

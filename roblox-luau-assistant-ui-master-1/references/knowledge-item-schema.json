@@ -1,0 +1,21 @@
+{
+  "knowledge_item": {
+    "knowledge_id": "string",
+    "domain": "string",
+    "claim": "string",
+    "scope": "string",
+    "source_url": "string",
+    "source_type": "OFFICIAL_ROBLOX|OFFICIAL_LUAU|ROBLOX_AUTHORED|DEVFORUM|COMMUNITY|PLAYGROUND|USER_EXAMPLE|UNVERIFIED",
+    "source_section": "string|null",
+    "crawl_or_observation_date": "YYYY-MM-DD|null",
+    "evidence_status": "CANDIDATE|STATICALLY_VERIFIED|RUNTIME_VERIFIED|CROSS_VERIFIED|CONFLICTING|SUPERSEDED|CONTEXT_SPECIFIC|STATIC_NARRATIVE_ONLY",
+    "confidence": "LOW|MEDIUM|HIGH",
+    "deprecated": "boolean",
+    "replacement": "string|null",
+    "constraints": ["string"],
+    "security_implications": ["string"],
+    "performance_implications": ["string"],
+    "common_misuse": ["string"],
+    "counterexamples_or_non_applicability": ["string"]
+  }
+}

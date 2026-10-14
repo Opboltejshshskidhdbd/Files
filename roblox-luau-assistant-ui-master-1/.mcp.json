@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "luau-validator-bridge": {
+      "url": "https://luau-validator-mcp.onrender.com/sse"
+    }
+  }
+}
