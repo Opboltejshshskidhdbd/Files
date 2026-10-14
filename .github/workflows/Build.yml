@@ -2,51 +2,72 @@ name: Extract ZIP and push
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*.zip'
+      - '.github/workflows/Build.yml'
 
 jobs:
   extract-and-push:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
+          fetch-depth: 0
           persist-credentials: true
 
-      - name: Set up unzip
+      - name: Install unzip
         run: sudo apt-get update && sudo apt-get install -y unzip
 
-      - name: Extract ZIP
-        env:
-          ZIP_PATH: "roblox-luau-assistant-ui-master-1.zip"
-          OUT_DIR: "roblox-luau-assistant-ui"
+      - name: Extract ZIP automatically
+        shell: bash
         run: |
-          if [ ! -f "${ZIP_PATH}" ]; then
-            echo "ERROR: ZIP not found at ${ZIP_PATH}"
-            ls -la
-            exit 1
+          set -euo pipefail
+
+          ZIP_PATH="$(find . -type f -iname '*.zip' | head -n 1)"
+          if [ -z "${ZIP_PATH}" ]; then
+            echo "No ZIP found in repo. Nothing to extract."
+            exit 0
           fi
+
+          echo "ZIP found: ${ZIP_PATH}"
+          OUT_DIR="${ZIP_PATH%.zip}"
+
           rm -rf "${OUT_DIR}"
           mkdir -p "${OUT_DIR}"
           unzip -o "${ZIP_PATH}" -d "${OUT_DIR}"
-          echo "Extracted ${ZIP_PATH} -> ${OUT_DIR}"
-          ls -la "${OUT_DIR}" | sed -n '1,200p'
 
-      - name: Create branch and commit
+          echo "Extracted ${ZIP_PATH} -> ${OUT_DIR}"
+          find "${OUT_DIR}" -maxdepth 2 -type f | sed -n '1,50p'
+
+      - name: Create branch and commit extracted files
         id: commit
+        shell: bash
         run: |
-          BRANCH="extract-zip/$(date -u +"%Y%m%dT%H%M%SZ")"
+          set -euo pipefail
+
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          BRANCH="extract-zip/$(date -u +'%Y%m%dT%H%M%SZ')"
           git checkout -b "$BRANCH"
-          git add -A "roblox-luau-assistant-ui"
+          git add -A .
+
           if git diff --cached --quiet; then
             echo "No changes to commit"
-            echo "branch=$BRANCH" >> $GITHUB_OUTPUT
+            echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          git commit -m "Extract ZIP: roblox-luau-assistant-ui (by workflow)"
+
+          git commit -m "Extract ZIP contents (by workflow)"
           git push --set-upstream origin "$BRANCH"
-          echo "branch=$BRANCH" >> $GITHUB_OUTPUT
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
 
       - name: Output branch
         run: echo "Created branch ${{ steps.commit.outputs.branch }}"
