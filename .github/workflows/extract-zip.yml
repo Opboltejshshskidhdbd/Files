@@ -1,0 +1,52 @@
+name: Extract ZIP and push
+
+on:
+  workflow_dispatch:
+
+jobs:
+  extract-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Set up unzip
+        run: sudo apt-get update && sudo apt-get install -y unzip
+
+      - name: Extract ZIP
+        env:
+          ZIP_PATH: "roblox-luau-assistant-ui-master-1.zip"
+          OUT_DIR: "roblox-luau-assistant-ui"
+        run: |
+          if [ ! -f "${ZIP_PATH}" ]; then
+            echo "ERROR: ZIP not found at ${ZIP_PATH}"
+            ls -la
+            exit 1
+          fi
+          rm -rf "${OUT_DIR}"
+          mkdir -p "${OUT_DIR}"
+          unzip -o "${ZIP_PATH}" -d "${OUT_DIR}"
+          echo "Extracted ${ZIP_PATH} -> ${OUT_DIR}"
+          ls -la "${OUT_DIR}" | sed -n '1,200p'
+
+      - name: Create branch and commit
+        id: commit
+        run: |
+          BRANCH="extract-zip/$(date -u +"%Y%m%dT%H%M%SZ")"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add -A "roblox-luau-assistant-ui"
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            echo "branch=$BRANCH" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          git commit -m "Extract ZIP: roblox-luau-assistant-ui (by workflow)"
+          git push --set-upstream origin "$BRANCH"
+          echo "branch=$BRANCH" >> $GITHUB_OUTPUT
+
+      - name: Output branch
+        run: echo "Created branch ${{ steps.commit.outputs.branch }}"
