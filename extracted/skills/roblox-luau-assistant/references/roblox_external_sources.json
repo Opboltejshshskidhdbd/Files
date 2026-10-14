@@ -1,0 +1,150 @@
+{
+  "schema_version": "1.0",
+  "catalog_name": "Roblox Luau Assistant external reference catalog",
+  "runtime_mode": "packaged_static_reference_catalog",
+  "last_verified_utc": "2026-10-03",
+  "authority_order": [
+    "Official Roblox Creator Hub / Roblox Engine API / Luau documentation",
+    "Existing roblox_dataset.json",
+    "Selected Roblox DevForum resources",
+    "General model knowledge"
+  ],
+  "sources": [
+    {
+      "title": "Roblox Engine API reference",
+      "url": "https://create.roblox.com/docs/reference/engine",
+      "source_type": "Official Docs",
+      "topic": "Engine API reference",
+      "authority": "authoritative",
+      "summary": "Reference for Roblox Engine classes, data types, enums, globals, libraries, properties, methods, events, and callbacks. Use as the primary authority for current API surface and behavior."
+    },
+    {
+      "title": "Luau",
+      "url": "https://create.roblox.com/docs/luau",
+      "source_type": "Official Docs",
+      "topic": "Luau language",
+      "authority": "authoritative",
+      "summary": "Overview of Luau as Roblox Studio's scripting language, including gradual typing, language behavior, and Script Editor support."
+    },
+    {
+      "title": "Type checking",
+      "url": "https://create.roblox.com/docs/luau/type-checking",
+      "source_type": "Official Docs",
+      "topic": "Luau type checking",
+      "authority": "authoritative",
+      "summary": "Current guidance for annotations, inference modes, unions, intersections, generics, type exports, casts, and Roblox-specific types."
+    },
+    {
+      "title": "Scripting",
+      "url": "https://create.roblox.com/docs/scripting",
+      "source_type": "Official Docs",
+      "topic": "Scripting fundamentals",
+      "authority": "authoritative",
+      "summary": "Roblox scripting overview and Luau fundamentals, including local scope, tables, iteration, and common script concepts."
+    },
+    {
+      "title": "Script types and locations",
+      "url": "https://create.roblox.com/docs/scripting/locations",
+      "source_type": "Official Docs",
+      "topic": "Client/server execution and RunContext",
+      "authority": "authoritative",
+      "summary": "Explains Script, LocalScript, execution location, Script.RunContext, and how placement affects server/client behavior and access."
+    },
+    {
+      "title": "Reuse code",
+      "url": "https://create.roblox.com/docs/scripting/module",
+      "source_type": "Official Docs",
+      "topic": "ModuleScript architecture",
+      "authority": "authoritative",
+      "summary": "Guidance for reusing code with ModuleScripts across the same side or client-server boundary, including common placement patterns."
+    },
+    {
+      "title": "Remote events and callbacks",
+      "url": "https://create.roblox.com/docs/scripting/events/remote",
+      "source_type": "Official Docs",
+      "topic": "Networking and remotes",
+      "authority": "authoritative",
+      "summary": "Defines RemoteEvent, UnreliableRemoteEvent, and RemoteFunction communication across the client-server boundary and their yielding/reliability characteristics."
+    },
+    {
+      "title": "Securing the client-server boundary",
+      "url": "https://create.roblox.com/docs/scripting/security/client-server-boundary",
+      "source_type": "Official Docs",
+      "topic": "Networking security and validation",
+      "authority": "authoritative",
+      "summary": "Server-side validation guidance for client-triggered actions, including remote inputs and client-triggered instances."
+    },
+    {
+      "title": "Data stores",
+      "url": "https://create.roblox.com/docs/cloud-services/data-stores",
+      "source_type": "Official Docs",
+      "topic": "Persistent data",
+      "authority": "authoritative",
+      "summary": "Current DataStoreService usage, server-only access, persistent storage concepts, Studio access considerations, and related cloud services."
+    },
+    {
+      "title": "Best practices for data stores",
+      "url": "https://create.roblox.com/docs/cloud-services/data-stores/best-practices",
+      "source_type": "Official Docs",
+      "topic": "DataStore architecture and reliability",
+      "authority": "authoritative",
+      "summary": "Current guidance on organizing data stores and keys, lifecycle management, versions, MemoryStore use, and scalable data practices."
+    },
+    {
+      "title": "Parallel Luau",
+      "url": "https://create.roblox.com/docs/scripting/multithreading",
+      "source_type": "Official Docs",
+      "topic": "Parallel Luau and Actors",
+      "authority": "authoritative",
+      "summary": "Current Parallel Luau programming model, Actors, parallel execution, and performance/safety considerations for workloads such as NPCs and procedural generation."
+    },
+    {
+      "title": "Network ownership",
+      "url": "https://create.roblox.com/docs/physics/network-ownership",
+      "source_type": "Official Docs",
+      "topic": "Physics networking",
+      "authority": "authoritative",
+      "summary": "Explains distributed physics, BasePart and assembly ownership, SetNetworkOwner, responsiveness, performance, and security implications."
+    },
+    {
+      "title": "How to use Parallel Luau",
+      "url": "https://devforum.roblox.com/t/how-to-use-parallel-luau/1176605",
+      "source_type": "DevForum",
+      "topic": "Parallel Luau practical tutorial",
+      "authority": "reference pattern",
+      "summary": "Community tutorial showing practical Actor-based Parallel Luau setup and conceptual examples. Treat as supplemental and defer to current Creator Hub documentation if details differ."
+    },
+    {
+      "title": "How To Use, Utilize, and Succeed with DataStores",
+      "url": "https://devforum.roblox.com/t/how-to-use-utilize-and-succeed-with-datastores/2698206",
+      "source_type": "DevForum",
+      "topic": "DataStore practical patterns",
+      "authority": "reference pattern",
+      "summary": "Community tutorial discussing DataStore usage, request efficiency, organization, and practical implementation considerations. Verify all API details against current official documentation."
+    },
+    {
+      "title": "Single Script Architecture and Modular Programming",
+      "url": "https://devforum.roblox.com/t/single-script-architecture-and-modular-programming/2432662",
+      "source_type": "DevForum",
+      "topic": "ModuleScript architecture",
+      "authority": "reference pattern",
+      "summary": "Community discussion/tutorial on organizing Roblox projects with entry scripts and ModuleScripts, including maintainability considerations. Treat architectural recommendations as optional patterns, not rules."
+    },
+    {
+      "title": "Code Framework and Structure",
+      "url": "https://devforum.roblox.com/t/code-framework-and-structure/3059321",
+      "source_type": "DevForum",
+      "topic": "Code architecture and UI modules",
+      "authority": "reference pattern",
+      "summary": "Community code-review discussion covering modular server/client structure, UI modules, initialization, and framework organization. Use only for practical patterns and defer to official API documentation."
+    },
+    {
+      "title": "DataStores Access and Storage Updates",
+      "url": "https://devforum.roblox.com/t/datastores-access-and-storage-updates/3597255",
+      "source_type": "DevForum",
+      "topic": "DataStore platform updates",
+      "authority": "supplemental platform reference",
+      "summary": "Roblox-authored DevForum announcement about DataStore access and storage changes. Useful for historical/current platform context, but API behavior should still be checked against current Creator Hub documentation."
+    }
+  ]
+}

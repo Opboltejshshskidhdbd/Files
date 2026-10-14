@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "cases": [
+    {"id":"BLOCK_EXTRA_END","class":"extra_end","wrong":"local x = 1\nend","right":"local x = 1","lesson":"Do not infer an unmatched end from a nearby block; audit whole-source block structure."},
+    {"id":"BLOCK_MISSING_END","class":"missing_end","wrong":"if true then\n  print(1)","right":"if true then\n  print(1)\nend","lesson":"A missing terminator is a structural defect and must be revalidated after repair."},
+    {"id":"NESTED_CALLBACK","class":"composition_mismatch","wrong":"local function f()\n  task.spawn(function()\n    print(1)\nend","right":"local function f()\n  task.spawn(function()\n    print(1)\n  end)\nend","lesson":"Nested callback composition requires whole-source balancing after generation."},
+    {"id":"COMMENT_CORRUPTION","class":"one_line_comment_corruption","wrong":"-- local x = 1\nprint(2)","right":"local x = 1\nprint(2)","lesson":"Generated formatting must not accidentally comment out executable source."}
+  ]
+}

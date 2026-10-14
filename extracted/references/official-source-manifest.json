@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "purpose": "Curated provenance anchors for Roblox-native engineering retrieval.",
+  "sources": [
+    {"id":"ROBLOX_SERVICES","type":"OFFICIAL_ROBLOX","url":"https://create.roblox.com/docs/scripting/services"},
+    {"id":"ROBLOX_ATTRIBUTES","type":"OFFICIAL_ROBLOX","url":"https://create.roblox.com/docs/scripting/attributes"},
+    {"id":"ROBLOX_PROXIMITY_PROMPT","type":"OFFICIAL_ROBLOX","url":"https://create.roblox.com/docs/reference/engine/classes/ProximityPrompt"},
+    {"id":"ROBLOX_PROXIMITY_PROMPT_SERVICE","type":"OFFICIAL_ROBLOX","url":"https://create.roblox.com/docs/reference/engine/classes/ProximityPromptService"},
+    {"id":"ROBLOX_COLLECTION_SERVICE","type":"OFFICIAL_ROBLOX","url":"https://create.roblox.com/docs/reference/engine/classes/CollectionService"},
+    {"id":"ROBLOX_RUN_SERVICE","type":"OFFICIAL_ROBLOX","url":"https://create.roblox.com/docs/reference/engine/classes/RunService"},
+    {"id":"ROBLOX_PLAYER_GUI","type":"OFFICIAL_ROBLOX","url":"https://create.roblox.com/docs/reference/engine/classes/PlayerGui"},
+    {"id":"ROBLOX_DATA_STORES","type":"OFFICIAL_ROBLOX","url":"https://create.roblox.com/docs/cloud-services/data-stores"},
+    {"id":"ROBLOX_CAPABILITIES","type":"OFFICIAL_ROBLOX","url":"https://create.roblox.com/docs/scripting/capabilities"},
+    {"id":"LUAU_SITE","type":"OFFICIAL_LUAU","url":"https://luau.org/"},
+    {"id":"LUAU_SITE_REPO","type":"OFFICIAL_LUAU","url":"https://github.com/luau-lang/site"},
+    {"id":"LUAU_REPO","type":"OFFICIAL_LUAU","url":"https://github.com/luau-lang/luau"}
+  ]
+}

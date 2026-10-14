@@ -1,0 +1,10 @@
+{
+  "dataset": "skills/roblox-luau-assistant/references/roblox_dataset.json",
+  "entries_total": 507,
+  "parser": "scripts/luau_parser.py v2 (not the official compiler)",
+  "parsed_ok": 374,
+  "parse_failed": 133,
+  "note": "Failures are mostly prose answers stored in the 'output' field (explanations, not code) plus ~30 real defects where 'return' appears mid-chunk followed by more code. Prose must be filtered out before counting as code; entries need an explicit code/prose flag.",
+  "status": "PARTIALLY_VERIFIED",
+  "strong_analyzer": "ANALYZER_UNAVAILABLE"
+}
